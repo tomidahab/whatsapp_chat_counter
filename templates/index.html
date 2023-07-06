@@ -22,7 +22,15 @@ body {
 </style>
 <body>
     <h1>Whatsapp Chat Counter</h1>
-    <img src="whatsapp.jpg" alt="Whatsapp Logo">
+    <div>Instrucciones:
+        <ul>
+            <li>Entrar al grupo de Whatsapp del que quieras contar los chats</li>
+            <li>Tocar los tres puntos arriba a la derecha</li>
+            <li>Tocas mas</li>
+            <li>Exportar chat</li>
+            <li>Subir el archivo .txt descomprimido a esta pagina</li>
+          </ul> 
+    </div>
     <form method='POST' enctype='multipart/form-data'>
         {{form.hidden_tag()}}
         {{form.file()}}
