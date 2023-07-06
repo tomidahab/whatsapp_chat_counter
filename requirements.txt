@@ -5,8 +5,4 @@ Flask-WTF==1.1.1
 html5lib==1.1
 httplib2==0.20.2
 importlib-metadata==4.6.4
-python-apt==2.3.0+ubuntu2.1
-python-dateutil==2.8.1
-python-debian===0.1.43ubuntu1
-python-dotenv==1.0.0
 WTForms==3.0.1
