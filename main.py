@@ -29,7 +29,9 @@ def leer_info(ejs):
 
 def chats():
     res = ""
-    with open("/home/tomi/Escritorio/whatsapp_counter/static/files/out.txt", 'rt') as archivo:
+    path = os.getcwd()
+    path += "/static/files/out.txt"
+    with open(path, 'rt') as archivo:
 
         datos = leer_info(archivo)
         apellido = datos[2]
