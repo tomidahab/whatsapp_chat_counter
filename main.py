@@ -17,10 +17,6 @@ class UploadFileForm(FlaskForm):
 def leer_info(ejs):
         
     linea = ejs.readline()        
-    print("\n\n\n")
-    
-    print(type(str((linea))))
-    print("\n\n\n")
     linea = str(linea)
     linea = linea.replace(":","-")
     if linea and linea.count("-") >= 3:
@@ -44,10 +40,8 @@ def chats_wpp(archivo):
             diccionario[apellido] = 1
         datos = leer_info(archivo)
         apellido = datos[2]
-    print(diccionario)
     lista = sorted(diccionario.items(), key=lambda kv: kv[1], reverse = True)
     for i in lista:
-        #print("{}: {} mensajes".format(i[0],i[1]))
         res += "{}: {} mensajes\n".format(i[0],i[1])
     return res
 
@@ -60,9 +54,7 @@ def chats_wpp(archivo):
 def home():
     form = UploadFileForm()
     if form.validate_on_submit():
-        file = form.file.data # First grab the file
-        #file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename("out.txt"))) # Then save the file
-        #return "File has been uploaded."
+        file = form.file.data
         file.seek(0)
         return render_template('result.html',res=chats_wpp(file))
     return render_template('index.html', form=form)
